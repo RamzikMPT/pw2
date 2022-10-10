@@ -48,18 +48,20 @@ namespace практика2
                         if (i > a)
                         {
                             Console.WriteLine("Больше");
-                            if (i < a)
+                            
+                        }
+                        if (i < a)
                             {
                                 Console.WriteLine("Меньше");
                             }
 
-                        }
-                        else
+                       
+
+                    }
+                     else
                         {
                             Console.WriteLine("Молодец, нашел");
                         }
-
-                    }
                 }
                 while (a != value);
 
