@@ -10,7 +10,7 @@ namespace практика2
     {
         static void Main()
         {
-            Console.WriteLine("Введите приложение Игра 'Угадай число'(1), Таблица умножения(2), Вывод делителей числа(3)");
+            Console.WriteLine("\n\tВведите приложение Игра 'Угадай число'(1), Таблица умножения(2), Вывод делителей числа(3)");
             Console.CursorVisible = false;
             int.TryParse(Console.ReadLine(), out int a);
             switch (a)
@@ -27,17 +27,17 @@ namespace практика2
                     Console.WriteLine("Вы выбрали вывод делителей числа");
                     t();
                     break;
-
             }
-            
-            static void n()
+                    Main();
+        }
+        static void n()
+        {
+            Console.WriteLine("Таблица умножения: ");
+            Console.ResetColor();
+            while (true)
             {
-                Console.WriteLine("Таблица умножения: ");
-                Console.ResetColor();
-                while (true)
+                int[,] i = new int[9, 9]
                 {
-                    int[,] i = new int[9, 9]
-                    {
                         {1,2,3,4,5,6,7,8,9},
                         {2,4,6,8,10,12,14,16,18},
                         {3,6,9,12,15,18,21,24,27},
@@ -47,25 +47,24 @@ namespace практика2
                         {7,14,21,28,35,42,49,56,63},
                         {8,16,24,32,40,48,56,64,72},
                         {9,18,27,36,45,54,64,72,81}
-                    };
-                    for (int q = 0; q < i.GetLength(0); q++)
+                };
+                for (int q = 0; q < i.GetLength(0); q++)
+                {
+                    for (int o = 0; o < i.GetLength(1); o++)
                     {
-                        for (int o = 0; o < i.GetLength(1); o++)
+                        if (i[q, o] < 10)
                         {
-                            if (i[q, o] < 10)
-                            {
-                                Console.Write(i[q, o] + "    ");
-                            }
-                            else
-                            {
-                                Console.Write(i[q, o] + "   ");
-                            }
+                            Console.Write(i[q, o] + "    ");
                         }
-                        Console.WriteLine();
+                        else
+                        {
+                            Console.Write(i[q, o] + "   ");
+                        }
                     }
-                   
-                    break;
+                    Console.WriteLine();
                 }
+
+                break;
             }
         }
         static void s()
