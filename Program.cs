@@ -8,12 +8,11 @@ namespace практика2
 
     internal class Program
     {
-
-        
         static void Main()
         {
-            Console.WriteLine("Введите приложение Игра 'Угадай число'Таблица умножения Вывод делителей числа");
-            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите приложение Игра 'Угадай число'(1), Таблица умножения(2), Вывод делителей числа(3)");
+            Console.CursorVisible = false;
+            int.TryParse(Console.ReadLine(), out int a);
             switch (a)
             {
                 case 1:
@@ -30,43 +29,7 @@ namespace практика2
                     break;
 
             }
-            static void s()
-            {
-                
-                Random xxx = new Random();
-
-                
-                int value = xxx.Next(0, 100);
-                int i = value;
-                int a;
-                do
-                {
-                    Console.WriteLine("Введите чиcло");
-                    a = int.Parse(Console.ReadLine());
-                    if (i != a)
-                    {
-                        if (i > a)
-                        {
-                            Console.WriteLine("Больше");
-                            
-                        }
-                        if (i < a)
-                            {
-                                Console.WriteLine("Меньше");
-                            }
-
-                       
-
-                    }
-                     else
-                        {
-                            Console.WriteLine("Молодец, нашел");
-                        }
-                }
-                while (a != value);
-
-
-            }
+            
             static void n()
             {
                 Console.WriteLine("Таблица умножения: ");
@@ -105,7 +68,48 @@ namespace практика2
                 }
             }
         }
-         static void t()
+        static void s()
+        {
+
+            Random xxx = new Random();
+
+
+            int value = xxx.Next(0, 100);
+            int i = value;
+            int a;
+            do
+            {
+                Console.WriteLine("Введите чиcло");
+                while (!int.TryParse(Console.ReadLine(), out a))
+                {
+                    Console.WriteLine("Введено не число! Повторите ввод");
+                }
+                
+                if (i != a)
+                {
+                    if (i > a)
+                    {
+                        Console.WriteLine("Больше");
+
+                    }
+                    if (i < a)
+                    {
+                        Console.WriteLine("Меньше");
+                    }
+
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Молодец, нашел");
+                }
+            }
+            while (a != value);
+
+
+        }
+        static void t()
         {
 
             Console.WriteLine("Введите чиcло");
